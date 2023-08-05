@@ -14,17 +14,24 @@ public class AppClasses {
         System.out.println("Renda: " + cliente.getRenda());
         System.out.println("Ano de Nascimento: " + cliente.getAnoNascimento());
         System.out.println("Sexo: " + cliente.getSexo());
+        System.out.println("Especial: " + cliente.isEspecial());
+        System.out.println("Aleatório: " + cliente.getAleatorio());
+
 
         System.out.println();
 
         System.out.println("Criando cliente 2");
-        Cliente cliente2 = new Cliente();
-        cliente2.setRenda(10000);
-        cliente2.setSexo('F');
+        Cliente cliente2 = new Cliente(20000, 'F');
+        // cliente2.setRenda(10000);
+        // cliente2.setSexo('F');
         cliente2.setAnoNascimento(1890);
 
         System.out.println("Renda: " + cliente2.getRenda());
         System.out.println("Ano de Nascimento: " + cliente2.getAnoNascimento());
         System.out.println("Sexo: " + cliente2.getSexo());
+        System.out.println("Especial: " + cliente2.isEspecial());
+        System.out.println("Aleatório: " + cliente2.getAleatorio());
+
+
     }
 }
