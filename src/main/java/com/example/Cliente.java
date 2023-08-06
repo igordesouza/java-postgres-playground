@@ -1,11 +1,14 @@
 package com.example;
 
 class Cliente {
+    private String nome;
+    private String cpf;
     private double renda;
     private char sexo;
     private int anoNascimento;
     private boolean especial;
     private double aleatorio;
+    private String cidade;
 
     // Construtor sem parâmetros
     public Cliente() {
@@ -36,6 +39,24 @@ class Cliente {
         this.sexo = sexo;
 
         
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        if (nome.isBlank())
+            System.out.println("O nome não pode ser vazio");
+        else this.nome = nome.toUpperCase().trim();
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public double getRenda() {
@@ -77,4 +98,11 @@ class Cliente {
         return aleatorio;
     }
 
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 }
