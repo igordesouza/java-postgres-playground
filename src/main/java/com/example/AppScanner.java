@@ -34,6 +34,7 @@ public class AppScanner {
         System.out.println("Digite o ano de nascimento: ");
         cliente.setAnoNascimento(scanner.nextInt());
 
+        scanner.close(); // Fechar o scanner
 
         System.out.println("Nome: " + cliente.getNome());
         System.out.println("Renda: " + cliente.getRenda());
