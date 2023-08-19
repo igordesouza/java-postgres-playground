@@ -105,4 +105,8 @@ class Cliente {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
+
+    public String toString() {
+        return "Cliente: " + nome + " - Cidade: " + cidade;
+    }
 }
