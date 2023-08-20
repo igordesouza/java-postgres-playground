@@ -1,30 +1,30 @@
 package com.example;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class App {
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("");
-        System.out.println("");
-        System.out.println("Hello World!\n");
+        System.out.println("Aplicação Java de Exemplo \n");
+        listarEstados();
 
-        // cast. conversão de tipo. pode estourar.
-        // sem cast o código não roda.
-        // error: Type mismatch: cannot convert from int to byte
-        // int idadeInt = 129;
-        // byte idade = (byte)idadeInt; 
-        // double peso = 70;
-        byte idade = 42;
-        double peso = 85;
+    }
 
-        System.out.println("Idade é " + idade + " e peso é " + peso);
+    public static void listarEstados() {
+        System.out.println("Listando estados cadastrados no banco de dados");
 
-        char sexo = 'M';
-
-        System.out.println("Sexo: " + sexo);
-
-        // o tipo pode ser var, mas um valor pode ser definido
-        boolean necessidadesEspeciais = true;
-        System.out.println("Tem necessidades especiais:" + necessidadesEspeciais);
-
+        try {
+            Class.forName("org.postgresql.Driver");
+            try(var conn = DriverManager.getConnection("jdbc:postgresql://localhost/postgres", "gitpod", "")) {
+                var stm = conn.createStatement();
+                var result = stm.executeQuery("select * from estado");
+                while (result.next()) {
+                    System.out.println(result.getString("nome"));
+                }
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
     }
 }
