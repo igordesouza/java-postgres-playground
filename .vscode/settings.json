@@ -14,5 +14,8 @@
         "org.mockito.Answers.*"
     ],
     "maven.executable.preferMavenWrapper": false,
-    "terminal.integrated.defaultProfile.linux": "zsh"
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "yaml.schemas": {
+        "https://gitpod.io/schemas/gitpod-schema.json": "file:///workspace/java-postgres-playground/.gitpod.yml"
+    }
 }
